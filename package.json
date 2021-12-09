@@ -1,0 +1,21 @@
+{
+  "name": "auto_download_bds",
+  "version": "1.0.0",
+  "description": "A Simple Script to Download BDS Server Automatically",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "KuumaCC",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "https": "^1.0.0",
+    "node-fetch": "^2.6.6",
+    "node-schedule": "^2.1.0"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.10"
+  }
+}

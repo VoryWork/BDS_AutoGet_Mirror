@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+        <meta name="renderer" content="webkit"/>
+        <meta name="force-rendering" content="webkit"/>
+        <meta
+        http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+        <!-- MDUI CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css"/>
+        <title>KuumaCC的无人值守BDS镜像站</title>
+    </head>
+
+    <body>
+        <div class="mdui-appbar">
+            <div class="mdui-toolbar mdui-color-indigo">
+                <img style="width:3rem" class="mdui-img-circle" src="/avatar.png"/>
+                <a href="/" class="mdui-typo-title">KuumaCC的无人值守BDS镜像站</a>
+                <div class="mdui-toolbar-spacer"></div>
+                <a onclick="window.location.reload()" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '刷新'}">
+                    <i class="mdui-icon material-icons">refresh</i>
+                </a>
+            </div>
+            <div class="mdui-tab mdui-color-indigo" mdui-tab>
+                <a href="#example1-tab1" class="mdui-ripple mdui-ripple-white">
+                    <svg class="mdui-icon" viewbox="-256 -256 1280 1280" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M419.84 540.16v400.384L0 883.2v-342.528h419.84z m0-457.216v405.504H0V140.8l419.84-57.856z m604.16 457.216V1024L465.92 947.2v-406.528h558.08zM1024 0v488.448H465.92V76.8L1024 0z"></path>
+                    </svg>
+                    <label>Windows</label>
+                </a>
+                <a href="#example1-tab2" class="mdui-ripple mdui-ripple-white">
+                    <svg class="mdui-icon" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="M512 16C238 16 16 238 16 512s222 496 496 496 496-222 496-496S786 16 512 16z m105.4 186c17.6-30.4 56.6-41 87-23.4 30.6 17.6 41 56.6 23.4 87.2-17.6 30.4-56.6 41-87 23.4-30.6-17.8-41-56.8-23.4-87.2zM190.8 575.8c-35.2 0-63.8-28.6-63.8-63.8 0-35.2 28.6-63.8 63.8-63.8 35.2 0 63.8 28.6 63.8 63.8 0 35.2-28.6 63.8-63.8 63.8z m56.2 6.2c44.6-35.8 44.8-103.8 0-139.8 17.2-65.6 58.2-121.4 113-158.2l47.4 79.2c-103 72.6-103 225 0 297.6L360 740c-54.8-36.6-95.6-92.6-113-158z m457.4 263.4c-30.6 17.6-69.4 7.2-87-23.4-17.6-30.6-7.2-69.6 23.4-87.2 30.4-17.6 69.4-7.2 87 23.4 17.6 30.6 7.2 69.6-23.4 87.2z m0.6-139c-53.4-20.6-112.2 13.2-121 70-10.4 2.8-97.8 28.6-193.4-18.8l45-80.6c114 53 246.8-23.4 257.8-148.8l92.2 1.4c-4.6 69-34.6 131-80.6 176.8z m-11.8-210.6c-10.8-124-142.6-202.4-257.8-148.8l-45-80.6c95.8-47.4 183-21.6 193.4-18.8 8.8 56.6 67.6 90.6 121 70 46.2 45.8 76 107.8 80.4 177l-92 1.2z"></path>
+                    </svg>
+                    <label>Linux</label>
+                </a>
+                <a href="#example1-tab3" class="mdui-ripple mdui-ripple-white">
+                    <i class="mdui-icon material-icons">info</i>
+                    <label>关于我</label>
+                </a>
+            </div>
+        </div>
+        <div class="mdui-container">
+            <div id="example1-tab1" class="mdui-p-t-4">
+                <ul class="mdui-list mdui-shadow-8">
+                    <% windows.reverse().forEach(function(file){ %>
+                        <a href="<%= "/download/windows/"+file %> " target="_blank">
+                            <li class="mdui-list-item mdui-ripple">
+                                <div class="mdui-list-item-content"><%= file %></div>
+                                <i class="mdui-list-item-icon mdui-icon material-icons">vertical_align_bottom</i>
+                            </li>
+                        </a>
+                    <% }) %>
+                </ul>
+            </div>
+            <div id="example1-tab2" class="mdui-p-t-4">
+                <ul class="mdui-list mdui-shadow-8">
+                    <% linux.reverse().forEach(function(file){ %>
+                        <a href="<%= "/download/"+file %> " target="_blank">
+                            <li class="mdui-list-item mdui-ripple">
+                                <div class="mdui-list-item-content"><%= file %></div>
+                                <i class="mdui-list-item-icon mdui-icon material-icons">vertical_align_bottom</i>
+                            </li>
+                        </a>
+                    <% }) %>
+                </ul>
+            </div>
+            <div id="example1-tab3" class="mdui-p-t-2">
+                <div
+                    class="mdui-card">
+
+                    <!-- 卡片头部，包含头像、标题、副标题 -->
+                    <div class="mdui-card-header">
+                        <img class="mdui-card-header-avatar" src="/avatar.png"/>
+                        <div class="mdui-card-header-title">KuumaCC</div>
+                        <div class="mdui-card-header-subtitle">一个服务器运维</div>
+                    </div>
+
+                    <!-- 卡片的标题和副标题 -->
+                    <div class="mdui-card-primary">
+                        <div class="mdui-card-primary-title">版本保留说明</div>
+                        <div class="mdui-card-primary-subtitle">请珍惜带宽资源!</div>
+                    </div>
+
+                    <!-- 卡片的内容 -->
+                    <div class="mdui-card-content">主线版本（如1.17.x.x）保留所有版本<br/>过期版本（如1.8.x.x）保留最后一个版本。（1.8.1.2）<br/>由于Linux版鲜有人使用，故只保留最后一个版本。</div>
+
+                </div>
+            </div>
+            <div class="mdui-p-a-2 mdui-text-center"><a class="mdui-text-color-black-secondary" style="text-decoration:none" href="https://beian.miit.gov.cn/">闽ICP备2021004922号-1</a></div>
+        </div>
+
+        <!-- MDUI JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>
+    </body>
+
+</html>
